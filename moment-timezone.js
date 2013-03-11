@@ -231,7 +231,7 @@
 				last = rules[i + 1];
 				rule = rules[i];
 
-				cloned = moment.utc(mom).add('m', offset + last.offset());
+				cloned = moment(mom).utc().add('m', offset + last.offset());
 
 				if (cloned >= rule.start()) {
 					return rule.rule();
@@ -450,6 +450,7 @@
 
 	moment.fn.tz = function (name) {
 		this._z = getZoneSet(name);
+		moment.updateOffset(this);
 		return this;
 	};
 
@@ -461,6 +462,8 @@
 		addZone    : addZone,
 		getZoneSet : getZoneSet
 	};
+
+	module.exports = moment;
 
 	// add default rule
 	addRule("-,0,9999,0,0,0,0,S");
