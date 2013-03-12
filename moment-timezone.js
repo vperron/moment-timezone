@@ -12,6 +12,7 @@
 		zoneNames = "africa antarctica asia australasia etcetera northamerica pacificnew southamerica".split(' '),
 		oldFormat,
 
+		defaultRule,
 		rules = {},
 		ruleSets = {},
 		zones = {},
@@ -238,7 +239,7 @@
 				}
 			}
 
-			throw "Rule not found";
+			return defaultRule;
 		}
 	};
 
@@ -317,11 +318,13 @@
 		},
 
 		format : function (mom) {
-			return this.zone(mom).format(mom);
+			var dup = moment(+mom);
+			return this.zone(dup).format(dup);
 		},
 
 		offset : function (mom) {
-			return -this.zone(mom).offset(mom);
+			var dup = moment(+mom);
+			return -this.zone(dup).offset(dup);
 		}
 	};
 
@@ -466,7 +469,7 @@
 	module.exports = moment;
 
 	// add default rule
-	addRule("-,0,9999,0,0,0,0,S");
+	defaultRule = addRule("-,0,9999,0,0,0,0,S");
 
     if(hasModule) {
         // add all rules
