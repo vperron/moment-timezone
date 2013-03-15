@@ -216,6 +216,7 @@
 				cloned,
 				i;
 
+				console.log(lastYearRule);
 			// console.log('\n' + mom.clone().utc().format());
 			// console.log(mom.clone().utc().add('m', offset).format());
 
