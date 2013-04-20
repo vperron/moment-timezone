@@ -437,7 +437,9 @@
 		getZoneSet : getZoneSet
 	};
 
-	module.exports = moment;
+  if(hasModule) {
+    module.exports = moment;
+  }
 
 	// add default rule
 	defaultRule = addRule("- 0 9999 0 0 0 0 0 0 S");
