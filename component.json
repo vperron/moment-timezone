@@ -1,0 +1,22 @@
+{
+  "name": "moment-timezone-experimental",
+  "version": "0.0.1-unstable",
+  "main": [
+    "moment.js",
+    "moment-timezone.js",
+    "zones/africa.js",
+    "zones/antarctica.js",
+    "zones/asia.js",
+    "zones/australasia.js",
+    "zones/europe.js",
+    "zones/northamerica.js",
+    "zones/pacificnew.js",
+    "zones/southamerica.js"
+  ],    
+  "description": "Olson timezone information for moment.js.",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vperron/moment-timezone.git"
+  }
+}
